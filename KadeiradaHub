@@ -1,0 +1,31 @@
+--Biblioteca Interface
+local Window = Library.CreateLib("Kadeirada Hub", "BloodTheme")
+
+--Nova Guias
+local Tab = Window:NewTab("Home")
+
+--Novas Seções
+local Section = Tab:NewSection("Brookhaven")
+Section:UpdateSection("Brookhaven2")
+--Labels
+Section:NewLabel("Slaa")
+label:UpdateLabel("Slaa2")
+
+--Buttons
+Section:NewButton("Começar", "ButtonInfo", function()
+    print("Kadeirada")
+end)
+button:UpdateButton("Começar2")
+
+--Toggles Text
+Section:NewToggle("Velocity", "Speed", function(state)
+    if state then
+        print("Speed On")
+    else
+        print("Speed Off")
+    end
+end)
+--Sliders
+Section:NewSlider("Velocity2", "Speed2", 200, 0, function(s) -- 200 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
